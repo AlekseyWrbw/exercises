@@ -3,18 +3,27 @@ Write a function to find the longest common prefix string amongst an array of st
 
 If there is no common prefix, return an empty string "".
 '''
-strs = ["dog","skib","car"]
+strs = ["",""]
+print(len(strs))
+print(strs[0])
 
-strs.sort(key=len)
-common_prefix = []
-for i in range(1,len(strs[0])):
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        strs.sort(key=len)
+        common_prefix = []
+
+        if len(strs) == 1:
+            return strs[0]
+        for i in range(1, len(strs[0])):
             for k in range(1, len(strs)):
+
                 if strs[0][:i] in strs[k]:
                     common_prefix.append(strs[0][:i])
+
                 elif strs[0][:i] not in strs[k] and strs[0][:i] not in common_prefix:
-                    print("")
+                    return ""
                 elif strs[0][:i] not in strs[k] and strs[0][:i] in common_prefix:
                     common_prefix.remove(strs[0][:i])
-print(common_prefix[-1])
-
+                    return common_prefix[-1]
 
