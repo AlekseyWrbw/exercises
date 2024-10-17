@@ -3,7 +3,7 @@ Write a function to find the longest common prefix string amongst an array of st
 
 If there is no common prefix, return an empty string "".
 '''
-strs = ["abra","bbrto", "skib", "ab"]
+strs = ["abbra", "abb"]
 #strs = []
 print(len(strs))
 #print(strs[0])
@@ -16,17 +16,22 @@ class Solution(object):
         if  len(strs) <=1:
             return('""')
 
-        for i in range(1, len(strs[0])):
+        for i in strs[0]:
             for k in range(1, len(strs)):
+                if i in strs[k][len(strs[0]):]:
 
-                if strs[0][:i] in strs[k]:
-                    common_prefix.append(strs[0][:i])
+                    common_prefix.append(i)
+                    print(common_prefix)
+                    return common_prefix
+                else:
+                # strs[0][:i] != strs[k][i]:
+                    return "nothing"
 
-                elif strs[0][:i] not in strs[k] and strs[0][:i] not in common_prefix:
-                    return ""
-                elif strs[0][:i] not in strs[k] and strs[0][:i] in common_prefix:
-                    common_prefix.remove(strs[0][:i])
-                    return common_prefix[-1]
+                # elif strs[0][:i] not in strs[k] and strs[0][:i] not in common_prefix:
+                #     return ""
+                # elif strs[0][:i] not in strs[k] and strs[0][:i] in common_prefix:
+                #     common_prefix.remove(strs[0][:i])
+                #     return common_prefix[-1]
 
 solution = Solution()
 
