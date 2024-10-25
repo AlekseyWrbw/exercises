@@ -16,3 +16,13 @@ reversed_string = ''
 for char in string_2:
     reversed_string = char + reversed_string
 print(reversed_string)
+
+#Remove first and last symbols
+
+def remove(string):
+    new_string = ''
+    for i in range(1, len(string)-1):
+        new_string = new_string + string[i]
+    return new_string
+
+print(remove(string))
