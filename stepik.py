@@ -36,3 +36,38 @@ def print_primes_up_to_n(N):
 N = int(input("Введите целое число N: "))
 print(f"Простые числа от 1 до {N}:")
 print_primes_up_to_n(N)
+
+
+'''
+Вводится число, если это число является чётным и оно больше 10 - 
+напечатайте 1, если число нечётное или отрицательное напечатайте -1, во всех других случаях  печатайте 0.
+'''
+number = int(input())
+
+if number > 10 and number%2 == 0:
+    print(1)
+elif number < 0 or number%2 !=0:
+    print(-1)
+else:
+    print(0)
+
+
+#Вводится строка, количество символов нечётное. Выведите элемент, который находиться посередине строки.
+
+word = input()
+
+if len(word)%2 != 0:
+    print(word[round(len(word)/2 + 0.1)-1])
+
+'''
+Вводится 2 числа, ширины и высота прямоугольника. Затем вводится символ из которого будет состоять этот прямоугольник.
+Напечатайте прямоугольник.
+'''
+
+# put your python code here
+first = int(input())
+second = int(input())
+third = input()
+
+for i in range(second):
+    print(first*third)
