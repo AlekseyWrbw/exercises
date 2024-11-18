@@ -71,3 +71,37 @@ third = input()
 
 for i in range(second):
     print(first*third)
+
+#Вводится число N нужно вывести максимальный делитель этого числа, не считая само число N.
+
+number = int(input())
+
+for i in range(1, number):
+    if (number) % (number - i) == 0:
+        print(number - i)
+        break
+
+'''Вводится строка - пароль, нужно проверить является ли пароль надёжным. Условия надёжности пароля:
+1) Длина не менее 8 символов
+2) Есть заглавная буква (и строчная буква)
+3) Есть цифра
+
+Если пароль надёжный напечатайте: "Пароль надёжный", в ином случае "Придумайте другой пароль"'''
+
+passw = input()
+upper = False
+lower = False
+digit = False
+
+for i in passw:
+    if i.isupper() == True:
+        upper = True
+    if i.islower() == True:
+        lower = True
+    if i.isdigit() == True:
+        digit = True
+
+if upper == True and lower == True and digit == True and len(passw) > 7:
+    print("Пароль надёжный")
+else:
+    print("Придумайте другой пароль")
